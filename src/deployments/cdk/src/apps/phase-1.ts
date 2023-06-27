@@ -444,7 +444,12 @@ export async function deploy({
     for (const { iam: iamConfig } of iamConfigs) {
       if (IamConfigType.is(iamConfig)) {
         for (const role of iamConfig.roles || []) {
+          console.log("Starting new role...");
+          console.log(role);
           if (role['trust-policy']) {
+            console.log(iamPoliciesBucketPrefix);
+            console.log("---")
+            console.log(role['trust-policy']);
             const iamPolicyKey = `${iamPoliciesBucketPrefix}${role['trust-policy']}`;
             try {
               console.log(iamPoliciesBucketName, iamPolicyKey);
