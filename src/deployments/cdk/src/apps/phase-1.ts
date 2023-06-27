@@ -98,6 +98,9 @@ export async function deploy({
   const assignedSubnetCidrPools = await loadAssignedSubnetCidrPool(context.subnetCidrPoolAssignedTable);
   const masterAccountKey = acceleratorConfig.getMandatoryAccountKey('master');
   const iamConfigs = acceleratorConfig.getIamConfigs();
+  console.log(`Found ${iamConfigs.length} IAM configs`);
+  console.log(iamConfigs);
+  console.log("------------------");
   const masterAccountId = getAccountId(accounts, masterAccountKey);
   const rootOrgId = organizations[0].rootOrgId!;
   if (!masterAccountId) {

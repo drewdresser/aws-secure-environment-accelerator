@@ -296,6 +296,7 @@ export class AcceleratorConfig implements t.TypeOf<typeof c.AcceleratorConfigTyp
    * Find all IAM configurations in mandatory accounts, workload accounts and organizational units.
    */
   getIamConfigs(): ResolvedIamConfig[] {
+    console.log("getIamConfigs");
     const result: ResolvedIamConfig[] = [];
     for (const [key, config] of this.getAccountAndOuConfigs()) {
       const iam = config.iam;
@@ -317,6 +318,7 @@ export class AcceleratorConfig implements t.TypeOf<typeof c.AcceleratorConfigTyp
         }
       }
     }
+    console.log(result);
     return result;
   }
 
