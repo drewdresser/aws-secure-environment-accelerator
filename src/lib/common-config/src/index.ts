@@ -316,7 +316,7 @@ export class AcceleratorConfig implements t.TypeOf<typeof c.AcceleratorConfigTyp
         for (const [accountKey, _] of this.getAccountConfigsForOu(key)) {
           console.log("OrganizationalUnitConfigType");
           console.log(key);
-          console..log(accountKey);
+          console.log(accountKey);
           console.log(iam.roles);
           console.log("----");
           result.push({
