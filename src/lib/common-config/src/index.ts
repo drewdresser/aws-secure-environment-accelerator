@@ -304,12 +304,21 @@ export class AcceleratorConfig implements t.TypeOf<typeof c.AcceleratorConfigTyp
         continue;
       }
       if (c.MandatoryAccountConfigType.is(config)) {
+        console.log("MandatoryAccountConfigType");
+        console.log(key);
+        console.log(iam.roles);
+        console.log("----");
         result.push({
           accountKey: key,
           iam,
         });
       } else if (c.OrganizationalUnitConfigType.is(config)) {
         for (const [accountKey, _] of this.getAccountConfigsForOu(key)) {
+          console.log("OrganizationalUnitConfigType");
+          console.log(key);
+          console..log(accountKey);
+          console.log(iam.roles);
+          console.log("----");
           result.push({
             ouKey: key,
             accountKey,
